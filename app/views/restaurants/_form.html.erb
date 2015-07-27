@@ -1,0 +1,73 @@
+<%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :building %><br>
+    <%= f.collection_select :building_id, Building.all, :id, :name, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.label :food_style %><br>
+    <%= f.collection_select :foodstyle_id, FoodStyle.all, :id, :name, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_1 %><br>
+    <%= f.text_field :phone_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2 %><br>
+    <%= f.text_field :phone_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :qq %><br>
+    <%= f.text_field :qq %>
+  </div>
+  <div class="field">
+    <%= f.label :qr_code %><br>
+    <%= f.text_field :qr_code %>
+  </div>
+  <div class="field">
+    <%= f.label :minimum_order %><br>
+    <%= f.number_field :minimum_order %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_charge %><br>
+    <%= f.number_field :delivery_charge %>
+  </div>
+  <div class="field">
+    <%= f.label :star_rating %><br>
+    <%= f.number_field :star_rating %>
+  </div>
+  <div class="field">
+    <%= f.label :is_active %><br>
+    <%= f.check_box :is_active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

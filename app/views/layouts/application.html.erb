@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hungryexpats</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if params[:controller] == "admin" || params[:controller] == "restaurants" || params[:controller] == "dishes" %>
+	<h1>Welcome to the HungryExpats Admin area</h1>
+	<ul id="admin_menu">
+		<li><%= link_to "HungryExpats", root_url %></li>
+		<li><%= link_to "Home", admin_index_path %></li>
+		<li><%= link_to "Restaurants", restaurants_path %></li>
+	</ul>
+	<br><br>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dishes for <%= @restaurant.name %></h1>
+
+<table id="dishes">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Picture</th>
+      <th>Category</th>
+      <th>Spiciness</th>
+      <th>Is available</th>
+      <th>Has options</th>
+      <th>Is active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <tr>
+        <td><%= dish.name %></td>
+        <td><%= dish.price %></td>
+        <td><%= dish.picture %></td>
+        <td><%= dish.dish_category.name %></td>
+        <td><%= dish.spiciness %></td>
+        <td><%= dish.is_available %></td>
+        <td><%= dish.has_options %></td>
+        <td><%= dish.is_active %></td>
+        <td><%= link_to 'Show', restaurant_dish_path(dish.restaurant_id, dish.id) %></td>
+        <td><%= link_to 'Edit', edit_restaurant_dish_path(dish.restaurant_id, dish.id) %></td>
+        <td><%= link_to 'Destroy', restaurant_dish_path(dish.restaurant_id, dish.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', restaurants_path %>
+<%= link_to 'New Dish', new_restaurant_dish_path %>

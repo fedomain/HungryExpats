@@ -1,0 +1,53 @@
+<%= form_for([@restaurant, @dish]) do |f| %>
+  <% if @dish.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
+
+      <ul>
+      <% @dish.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :spiciness %><br>
+    <%= f.number_field :spiciness %>
+  </div>
+  <div class="field">
+    <%= f.label :dish_category_id %><br>
+    <%= f.collection_select :dish_category_id, DishCategory.all, :id, :name, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.label :is_available %><br>
+    <%= f.check_box :is_available %>
+  </div>
+  <div class="field">
+    <%= f.label :has_options %><br>
+    <%= f.check_box :has_options %>
+  </div>
+  <div class="field">
+    <%= f.label :is_active %><br>
+    <%= f.check_box :is_active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

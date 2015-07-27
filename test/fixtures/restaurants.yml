@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  description: MyText
+  address: MyString
+  picture: MyString
+  phone_1: MyString
+  phone_2: MyString
+  qq: MyString
+  qr_code: MyString
+  minimum_order: 1
+  delivery_charge: 1
+  star_rating: 1
+  is_active: false
+
+two:
+  name: 
+  description: MyText
+  address: MyString
+  picture: MyString
+  phone_1: MyString
+  phone_2: MyString
+  qq: MyString
+  qr_code: MyString
+  minimum_order: 1
+  delivery_charge: 1
+  star_rating: 1
+  is_active: false
