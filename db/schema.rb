@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727145723) do
+ActiveRecord::Schema.define(version: 20150728141414) do
 
   create_table "buildings", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20150727145723) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "opening_hours", force: :cascade do |t|
+    t.integer  "day",           limit: 4
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "restaurant_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "opening_hours", ["restaurant_id"], name: "index_opening_hours_on_restaurant_id", using: :btree
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "name",            limit: 255
     t.text     "description",     limit: 65535
@@ -65,12 +76,9 @@ ActiveRecord::Schema.define(version: 20150727145723) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.integer  "building_id",     limit: 4
-    t.integer  "foodstyle_id",    limit: 4
+    t.integer  "food_style_id",   limit: 4
   end
 
-  add_index "restaurants", ["building_id"], name: "index_restaurants_on_building_id", using: :btree
-  add_index "restaurants", ["foodstyle_id"], name: "index_restaurants_on_foodstyle_id", using: :btree
-
   add_foreign_key "dishes", "restaurants"
-  add_foreign_key "restaurants", "buildings"
+  add_foreign_key "opening_hours", "restaurants"
 end

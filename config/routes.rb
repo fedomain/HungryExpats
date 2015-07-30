@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  
-  resources :restaurants do
-    resources :dishes
+  namespace :admin do
+    resources :restaurants do
+      resources :dishes
+    end
   end
-
+  
   get 'admin/index'
 
   get 'welcome/index'

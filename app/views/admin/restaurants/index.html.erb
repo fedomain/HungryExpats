@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Restaurants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Building</th>
+      <th>Food Style</th>
+      <th>Phone 1</th>
+      <th>Phone 2</th>
+      <th>Minimum order</th>
+      <th>Delivery charge</th>
+      <th>Star rating</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.building.name %></td>
+        <td><%= restaurant.food_style.name %></td>
+        <td><%= restaurant.phone_1 %></td>
+        <td><%= restaurant.phone_2 %></td>
+        <td><%= restaurant.minimum_order %></td>
+        <td><%= restaurant.delivery_charge %></td>
+        <td><%= restaurant.star_rating %></td>
+        <td><%= link_to 'Opening Hours', admin_restaurant_dishes_path(restaurant) %></td>
+        <td><%= link_to 'Dishes', admin_restaurant_dishes_path(restaurant) %></td>
+        <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
+        <td><%= link_to 'Destroy', admin_restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restaurants', new_admin_restaurant_path %>

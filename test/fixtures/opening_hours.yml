@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: 1
+  start_time: 2015-07-28 09:14:14
+  end_time: 2015-07-28 09:14:14
+  restaurant_id: 
+
+two:
+  day: 1
+  start_time: 2015-07-28 09:14:14
+  end_time: 2015-07-28 09:14:14
+  restaurant_id: 

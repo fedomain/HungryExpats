@@ -28,9 +28,9 @@
         <td><%= dish.is_available %></td>
         <td><%= dish.has_options %></td>
         <td><%= dish.is_active %></td>
-        <td><%= link_to 'Show', restaurant_dish_path(dish.restaurant_id, dish.id) %></td>
-        <td><%= link_to 'Edit', edit_restaurant_dish_path(dish.restaurant_id, dish.id) %></td>
-        <td><%= link_to 'Destroy', restaurant_dish_path(dish.restaurant_id, dish.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_restaurant_dish_path(dish.restaurant_id, dish.id) %></td>
+        <td><%= link_to 'Edit', edit_admin_restaurant_dish_path(dish.restaurant_id, dish.id) %></td>
+        <td><%= link_to 'Destroy', admin_restaurant_dish_path(dish.restaurant_id, dish.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,5 +38,5 @@
 
 <br>
 
-<%= link_to 'Back', restaurants_path %>
-<%= link_to 'New Dish', new_restaurant_dish_path %>
+<%= link_to 'Back', admin_restaurants_path %>
+<%= link_to 'New Dish', new_admin_restaurant_dish_path %>
