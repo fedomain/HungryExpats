@@ -36,13 +36,6 @@
 </p>
 
 <p>
-  <strong>Opening Hours:</strong><br>
-  <% @restaurant.opening_hours.each do |opening_hour| %>
-    <%= opening_hour.day %> <%= opening_hour.start_time %> - <%= opening_hour.end_time %> <br>
-  <% end %>
-</p>
-
-<p>
   <strong>Picture:</strong>
   <%= @restaurant.picture %>
 </p>
@@ -75,6 +68,19 @@
 <p>
   <strong>Is active:</strong>
   <%= @restaurant.is_active %>
+</p>
+
+<p>
+  <strong>Opening Hours:</strong>
+  <table>
+    <% @restaurant.opening_hours.each do |opening_hour| %>
+      <tr>
+        <td><%= opening_hour.day %></td>
+        <td><%= opening_hour.start_time %></td>
+        <td><%= opening_hour.end_time %></td>
+      </tr>
+    <% end %>
+  </table>
 </p>
 
 <p>
