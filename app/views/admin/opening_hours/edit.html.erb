@@ -1,0 +1,7 @@
+<h1>New Opening Hour for <%= @restaurant.name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', admin_restaurant_opening_hours_path(@opening_hour.restaurant_id) %>
+<%= link_to 'Show', admin_restaurant_opening_hour_path(@opening_hour.restaurant_id, @opening_hour.id) %>
+

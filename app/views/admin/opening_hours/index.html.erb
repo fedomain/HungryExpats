@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opening Hours for <%= @restaurant.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Start</th>
+      <th>End</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opening_hours.each do |opening_hour| %>
+      <tr>
+        <td><%= opening_hour.day %></td>
+        <td><%= opening_hour.start_time %></td>
+        <td><%= opening_hour.end_time %></td>
+        <td><%= link_to 'Show', admin_restaurant_opening_hour_path(opening_hour.restaurant_id, opening_hour.id) %></td>
+        <td><%= link_to 'Edit', edit_admin_restaurant_opening_hour_path(opening_hour.restaurant_id, opening_hour.id) %></td>
+        <td><%= link_to 'Destroy', admin_restaurant_opening_hour_path(opening_hour.restaurant_id, opening_hour.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', admin_restaurants_path %>
+<%= link_to 'New Opening Hours', new_admin_restaurant_opening_hour_path %>

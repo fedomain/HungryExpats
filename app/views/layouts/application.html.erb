@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if params[:controller] == "admin" || params[:controller] == "admin/restaurants" || params[:controller] == "admin/dishes" %>
+<% if params[:controller] == "admin" || params[:controller] == "admin/restaurants" || params[:controller] == "admin/dishes" || params[:controller] == "admin/opening_hours" %>
 	<h1>Welcome to the HungryExpats Admin area</h1>
 	<ul id="admin_menu">
 		<li><%= link_to "HungryExpats", root_url %></li>

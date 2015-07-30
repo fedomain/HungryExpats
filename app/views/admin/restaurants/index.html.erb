@@ -28,7 +28,7 @@
         <td><%= restaurant.minimum_order %></td>
         <td><%= restaurant.delivery_charge %></td>
         <td><%= restaurant.star_rating %></td>
-        <td><%= link_to 'Opening Hours', admin_restaurant_dishes_path(restaurant) %></td>
+        <td><%= link_to 'Opening Hours', admin_restaurant_opening_hours_path(restaurant) %></td>
         <td><%= link_to 'Dishes', admin_restaurant_dishes_path(restaurant) %></td>
         <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>

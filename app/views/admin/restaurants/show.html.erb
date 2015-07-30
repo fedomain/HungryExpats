@@ -26,11 +26,6 @@
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= @restaurant.picture %>
-</p>
-
-<p>
   <strong>Phone 1:</strong>
   <%= @restaurant.phone_1 %>
 </p>
@@ -38,6 +33,18 @@
 <p>
   <strong>Phone 2:</strong>
   <%= @restaurant.phone_2 %>
+</p>
+
+<p>
+  <strong>Opening Hours:</strong><br>
+  <% @restaurant.opening_hours.each do |opening_hour| %>
+    <%= opening_hour.day %> <%= opening_hour.start_time %> - <%= opening_hour.end_time %> <br>
+  <% end %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @restaurant.picture %>
 </p>
 
 <p>
@@ -68,6 +75,18 @@
 <p>
   <strong>Is active:</strong>
   <%= @restaurant.is_active %>
+</p>
+
+<p>
+  <strong>Dishes:</strong>
+  <table>
+    <% @restaurant.dishes.each do |dish| %>
+      <tr>
+        <td><%= dish.name %></td>
+        <td><%= dish.price %></td>
+      </tr>
+    <% end %>
+  </table>
 </p>
 
 <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant) %> |
