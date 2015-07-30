@@ -1,5 +1,5 @@
 module Admin
-  class RestaurantsController < ApplicationController
+  class RestaurantsController < AdminController
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
     # GET /restaurants

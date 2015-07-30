@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'opening_hours/index'
+
   namespace :admin do
     resources :restaurants do
       resources :dishes
