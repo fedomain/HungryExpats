@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :dishes
       resources :opening_hours
     end
+    resources :customers
   end
   
   get 'admin/index'
