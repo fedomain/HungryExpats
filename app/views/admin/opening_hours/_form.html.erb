@@ -13,20 +13,26 @@
 
   <div class="field">
     <%= f.label :day %><br>
-    <%= f.text_field :day %>
+    <%# f.select :day, DATE::DAYNAMES %>
+    <%# f.text_field :day %>
+    <%= f.select :day, [['Sunday', 0], ['Monday', 1], ['Tuesday', 2], ['Wednesday', 3], ['Thursday', 4], ['Friday', 5], ['Saturday', 6]] %> 
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
-    <%= f.text_field :start_time %>
+    <%= time_select("opening_hour", "start_time", {:ignore_date => true, :prompt => true}) %>
+    <%# f.text_field :start_time %>
     <%# select_time Time.now, prefix: :start_time %>
 
   </div>
   <div class="field">
     <%= f.label :end_time %><br>
-    <%= f.text_field :end_time %>
+    <%= time_select("opening_hour", "end_time", {:ignore_date => true, :prompt => true}) %>
+    <%# f.text_field :end_time %>
     <%# select_time Time.now, prefix: :end_time %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<br><br>
+

@@ -1,0 +1,7 @@
+<h1>Edit Order for <%= @customer.first_name %> <%= @customer.last_name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', admin_customer_orders_path(@order.customer_id) %>
+<%= link_to 'Show', admin_customer_order_path(@order.customer_id, @order.id) %>
+

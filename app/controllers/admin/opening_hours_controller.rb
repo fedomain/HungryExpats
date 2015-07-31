@@ -25,6 +25,8 @@ module Admin
       else
         render 'new'
       end
+
+      #render plain: params[:opening_hour].inspect
     end
 
     def update

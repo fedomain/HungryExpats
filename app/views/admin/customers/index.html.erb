@@ -30,6 +30,7 @@
         <td><%= customer.phone_verification_code %></td>
         <td><%= customer.has_agreed %></td>
         <td><%= customer.is_active %></td>
+        <td><%= link_to 'Orders', admin_customer_orders_path(customer) %></td>
         <td><%= link_to 'Show', admin_customer_path(customer) %></td>
         <td><%= link_to 'Edit', edit_admin_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', admin_customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' } %></td>

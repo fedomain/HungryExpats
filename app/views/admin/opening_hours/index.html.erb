@@ -15,9 +15,9 @@
   <tbody>
     <% @opening_hours.each do |opening_hour| %>
       <tr>
-        <td><%= opening_hour.day %></td>
-        <td><%= opening_hour.start_time %></td>
-        <td><%= opening_hour.end_time %></td>
+        <td><%= Date::DAYNAMES[opening_hour.day] %></td>
+        <td><%= opening_hour.start_time.strftime("%l:%M%P") %></td>
+        <td><%= opening_hour.end_time.strftime("%l:%M%P") %></td>
         <td><%= link_to 'Show', admin_restaurant_opening_hour_path(opening_hour.restaurant_id, opening_hour.id) %></td>
         <td><%= link_to 'Edit', edit_admin_restaurant_opening_hour_path(opening_hour.restaurant_id, opening_hour.id) %></td>
         <td><%= link_to 'Destroy', admin_restaurant_opening_hour_path(opening_hour.restaurant_id, opening_hour.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>

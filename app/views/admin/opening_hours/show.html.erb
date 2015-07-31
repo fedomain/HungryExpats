@@ -2,17 +2,17 @@
 
 <p>
   <strong>Day:</strong>
-  <%= @opening_hour.day %>
+  <%= Date::DAYNAMES[@opening_hour.day] %>
 </p>
 
 <p>
   <strong>Start Time:</strong>
-  <%= @opening_hour.start_time %>
+  <%= @opening_hour.start_time.strftime("%l:%M%P") %>
 </p>
 
 <p>
   <strong>End Time:</strong>
-  <%= @opening_hour.end_time %>
+  <%= @opening_hour.end_time.strftime("%l:%M%P") %>
 </p>
 
 <%= link_to 'Edit', edit_admin_restaurant_opening_hour_path(@opening_hour.restaurant_id, @opening_hour.id) %> |

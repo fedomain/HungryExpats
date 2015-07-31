@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_no: 1
+  customer_id: 
+  restaurant_id: 
+  order_status_id: 1
+  address: MyString
+  city_area: MyString
+  building: MyString
+  city: MyString
+  province: MyString
+  country: MyString
+  delivery_charge: 1.5
+  price_adjustment: 1.5
+
+two:
+  order_no: 1
+  customer_id: 
+  restaurant_id: 
+  order_status_id: 1
+  address: MyString
+  city_area: MyString
+  building: MyString
+  city: MyString
+  province: MyString
+  country: MyString
+  delivery_charge: 1.5
+  price_adjustment: 1.5

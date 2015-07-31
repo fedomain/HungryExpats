@@ -1,5 +1,5 @@
 module Admin
-  class CustomersController < ApplicationController
+  class CustomersController < AdminController
     before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
     # GET /customers
