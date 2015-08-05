@@ -14,13 +14,6 @@
  *= require_self
  */
 
-#dishes {
-	border: 1px;
-}
-
-#dishes td {
-	padding: 5px;
-}
 
 ul#admin_menu {
 	list-style-type: none;
@@ -47,4 +40,8 @@ ul#admin_menu li a:hover {
 	color: #000;
 	background-color: #f00;
 	text-decoration: none;
+}
+
+table.standard_table td {
+	padding: 5px;
 }

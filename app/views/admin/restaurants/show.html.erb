@@ -73,11 +73,16 @@
 <p>
   <strong>Opening Hours:</strong>
   <table>
+    <tr>
+      <th>Day</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+    </tr>
     <% @restaurant.opening_hours.each do |opening_hour| %>
       <tr>
-        <td><%= opening_hour.day %></td>
-        <td><%= opening_hour.start_time %></td>
-        <td><%= opening_hour.end_time %></td>
+        <td><%= Date::DAYNAMES[opening_hour.day] %></td>
+        <td><%= opening_hour.start_time.strftime("%l:%M%P") %></td>
+        <td><%= opening_hour.end_time.strftime("%l:%M%P") %></td>
       </tr>
     <% end %>
   </table>
@@ -86,6 +91,10 @@
 <p>
   <strong>Dishes:</strong>
   <table>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
     <% @restaurant.dishes.each do |dish| %>
       <tr>
         <td><%= dish.name %></td>

@@ -2,11 +2,12 @@
 
 <h4>Orders</h4>
 
-<table>
+<table border=1 class="standard_table">
   <thead>
     <tr>
     	<th>Date</th>
       <th>Order No</th>
+      <th>Status</th>
       <th>Customer</th>
       <th>Restaurant</th>
       <th>Dishes</th>
@@ -19,8 +20,18 @@
       <tr>
       	<td><%= order.created_at.to_formatted_s(:short) %></td>
         <td><%= order.order_no %></td>
-        <td><%= order.customer.first_name %> <%= order.customer.last_name %></td>
-        <td><%= order.restaurant.name %></td>
+        <td><%= order.order_status.status %></td>
+        <td style="valign:top;">
+          <%= order.customer.first_name %> <%= order.customer.last_name %> <br>
+          <%= order.address %> <br>
+          <%= order.customer.phone %> 
+        </td>
+        <td>
+          <%= order.restaurant.name %> <br>
+          <%= order.restaurant.address %> <br>
+          <%= order.restaurant.phone_1 %> <br>
+          <%= order.restaurant.phone_2 %>
+        </td>
         <td><%= order.address %></td>
         <td><%= link_to 'Show', admin_customer_order_path(order.customer_id, order.id) %></td>
         <td><%= link_to 'Edit', edit_admin_customer_order_path(order.customer_id, order.id) %></td>
