@@ -1,10 +1,17 @@
-<h1>Welcome to HungryExpats.com</h1>
-
-<%= link_to "Admin", admin_index_path %>
-<br><br>
-
-<% @date = Time.now() %>
-<%= @date.to_formatted_s(:short) %> <br>
-<%= @date.days_to_week_start() %>
-
-
+<div id="photo_slide"><%= image_tag("homepage_photo_slide_1.png", :alt => "Photo Slide") %></div>
+<div id="content_box">
+	<div id="box_1">
+		<p class="box_title"><%= image_tag("box_1_title.png", :alt => "Title 1") %></p>
+		<p>
+			We know how frustrating it can be living and working in a foreign country.<br><br>
+			HungryExpats.com aims to provide the most comprehensive food ordering service for expats all over the world.
+		</p>
+	</div>
+	<div id="box_2">
+		<p class="box_title"><%= image_tag("box_2_title.png", :alt => "Title 2") %></p>
+		<p>
+			Your food is just a few clicks away.<br><br>
+			HungryExpats.com makes ordering food fun and easy. We put the power back in your hands so you can enjoy your food from the comfort of your own home.
+		</p>
+	</div>
+</div>
