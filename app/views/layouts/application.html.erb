@@ -2,7 +2,11 @@
 <html>
 <head>
   <title>Hungryexpats</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <% if params[:controller].include? "admin" %>
+  	<%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <% else %>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <% end %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -16,39 +20,40 @@
 		<li><%= link_to "Customers", admin_customers_path %></li>
 	</ul>
 	<br><br>
-<% end %>
-
-<div id="wrapper">
-	<div id="header" class="header_standard">
-		<div id="header_logo"><%= link_to image_tag("homepage_logo.png", :alt => "Hungryexpats.com"), root_url %></div>
-		<div id="header_middle">
-			<%= link_to image_tag("homepage_login.png", :alt => "Login"), root_url %>&nbsp;&nbsp;
-			<%= link_to image_tag("homepage_signup.png", :alt => "Signup"), root_url %>
-		</div>
-		<div id="header_menu">
-			<%= link_to image_tag("menu_home.png", :alt => "Home", :id => "menu_home"), root_url %>&nbsp;&nbsp;&nbsp;
-			<%= link_to image_tag("menu_profile.png", :alt => "My Profile", :id => "menu_profile"), root_url %>&nbsp;&nbsp;&nbsp;
-			<%= link_to image_tag("menu_order.png", :alt => "My Order", :id => "menu_order"), root_url %>&nbsp;&nbsp;&nbsp;
-			<%= link_to image_tag("menu_make_order.png", :alt => "Make an Order", :id => "menu_make_order"), root_url %>
-		</div>
-	</div>
-
 	<%= yield %>
-
-	<div id="homepage_steps"><%= image_tag("homepage_steps.png", :alt => "Homepage Steps") %></div>
-	<div id="footer">
-		<div id="footer_left">
-			<%= link_to "About Hungryexpats.com", root_url, :class => "footer_text" %>&nbsp;&nbsp;
-			<%= link_to "FAQ", root_url, :class => "footer_text" %>&nbsp;&nbsp;
-			<%= link_to "Contact", root_url, :class => "footer_text" %>&nbsp;&nbsp;
-			<%= link_to "Terms & Conditions", root_url, :class => "footer_text" %>
+<% else %>
+	<div id="wrapper">
+		<div id="header" class="header_standard">
+			<div id="header_logo"><%= link_to image_tag("homepage_logo.png", :alt => "Hungryexpats.com"), root_url %></div>
+			<div id="header_middle">
+				<%= link_to image_tag("homepage_login.png", :alt => "Login"), root_url %>&nbsp;&nbsp;
+				<%= link_to image_tag("homepage_signup.png", :alt => "Signup"), root_url %>
+			</div>
+			<div id="header_menu">
+				<%= link_to image_tag("menu_home.png", :alt => "Home", :id => "menu_home"), root_url %>&nbsp;&nbsp;&nbsp;
+				<%= link_to image_tag("menu_profile.png", :alt => "My Profile", :id => "menu_profile"), root_url %>&nbsp;&nbsp;&nbsp;
+				<%= link_to image_tag("menu_order.png", :alt => "My Order", :id => "menu_order"), root_url %>&nbsp;&nbsp;&nbsp;
+				<%= link_to image_tag("menu_make_order.png", :alt => "Make an Order", :id => "menu_make_order"), root_url %>
+			</div>
 		</div>
-		<div id="footer_right">
-			&copy;2012 Hungryexpats.com. All Rights Reserved.<br>
-			Developed by <%= link_to "SinoCloud Technology", "http://sinocloud.technology", :target => "_blank", :class => "footer_text" %><br>
-			<%= link_to image_tag("icon_facebook.png", :alt => "Follow us on Facebook"), "http://www.facebook.com", :target => "_blank" %>&nbsp;<%= link_to image_tag("icon_twitter.png", :alt => "Follow us on Twitter"), "http://www.twitter.com", :target => "_blank" %>
+
+		<%= yield %>
+
+		<div id="homepage_steps"><%= image_tag("homepage_steps.png", :alt => "Homepage Steps") %></div>
+		<div id="footer">
+			<div id="footer_left">
+				<%= link_to "About Hungryexpats.com", root_url, :class => "footer_text" %>&nbsp;&nbsp;
+				<%= link_to "FAQ", root_url, :class => "footer_text" %>&nbsp;&nbsp;
+				<%= link_to "Contact", root_url, :class => "footer_text" %>&nbsp;&nbsp;
+				<%= link_to "Terms & Conditions", root_url, :class => "footer_text" %>
+			</div>
+			<div id="footer_right">
+				&copy;2012 Hungryexpats.com. All Rights Reserved.<br>
+				Developed by <%= link_to "SinoCloud Technology", "http://sinocloud.technology", :target => "_blank", :class => "footer_text" %><br>
+				<%= link_to image_tag("icon_facebook.png", :alt => "Follow us on Facebook"), "http://www.facebook.com", :target => "_blank" %>&nbsp;<%= link_to image_tag("icon_twitter.png", :alt => "Follow us on Twitter"), "http://www.twitter.com", :target => "_blank" %>
+			</div>
 		</div>
 	</div>
-</div>
+<% end %>
 </body>
 </html>

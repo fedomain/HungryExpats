@@ -6,7 +6,7 @@
 $ ->
 	$('#menu_home,#menu_profile,#menu_order,#menu_make_order').hover(
 		(ev) -> 
-			$(this).attr 'src', '/assets/' + $(this).attr('id') + '_over.png'
+			$(this).attr('src', '/assets/' + $(this).attr('id') + '_over.png')
 		(ev) -> 
-			$(this).attr 'src', '/assets/' + $(this).attr('id') + '.png'
+			$(this).attr('src', '/assets/' + $(this).attr('id') + '.png')
 	)
